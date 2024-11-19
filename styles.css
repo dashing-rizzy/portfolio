@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.video-background {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Send video to the background */
+}
+
+.video-background .content {
+  position: relative;
+  z-index: 1; /* Ensure content appears above the video */
+  text-align: center;
+  color: white; /* Adjust text color based on your design */
+}
+
+.header-top img {
+  border-radius: 50%;
+  height: auto; /* Use auto to maintain aspect ratio */
+  width: 100%;
+  max-width: 350px; /* Set a max-width for larger screens */
+}
+
+.sour {
+  font-family: "Inter", sans-serif !important;
+}
+
+.bio-section {
+  margin-top: 4%;
+}
+
+/* Social Media Icons */
+.icons {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s;
+}
+
+.button svg {
+  color: white;
+  width: 30px;
+  height: 30px;
+  z-index: 9;
+}
+
+.button:nth-child(2) {
+  background: linear-gradient(120deg, #02ff2c, #008a12);
+}
+
+.button:nth-child(3) {
+  background: rgb(69, 187, 255);
+}
+
+.button:nth-child(4) {
+  background: rgb(255, 33, 33);
+}
+
+.button:nth-child(5) {
+  background: black;
+}
+
+.button:active {
+  transform: scale(0.85);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-color: #212121;
+  border-radius: 50%;
+  z-index: -1;
+  border: 0px solid rgba(255, 255, 255, 0.411);
+  transition: 0.4s;
+}
+
+.button:hover::before {
+  width: 0px;
+  height: 0px;
+}
+
+/* Download CV Icons */
+.downloadcv {
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.downloadcv:hover::before {
+  transform: scaleX(1);
+}
+
+.downloadcv-content {
+  position: relative;
+  z-index: 1;
+}
+
+.downloadcv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+.header-top {
+  margin-top: 5%;
+}
+
+#html, #css, #javascript, #wordpress, #react, #tailwind, #jquery, #bootstrap , #nodejs {
+  width: 20%;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .header-top img {
+      padding-top: 5%;
+      height: auto; /* Maintain aspect ratio */
+      width: 70%;
+  }
+  .header-top {
+      padding: 0 !important;
+  }
+  .header-top .card-text {
+      padding: 5% !important;
+  }
+  .col-md-8 {
+      padding: 0 !important;
+      margin-top: 30px;
+      text-align: center;
+  }
+  .icons {
+      width: 100%;
+  }
+  #html, #css, #javascript, #wordpress, #react, #tailwind, #jquery, #bootstrap, #nodejs {
+      width: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-top img {
+      width: 75%; /* Adjust for smaller screens */
+  }
+  .video-background {
+    position: relative;
+    height: 105vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .button {
+      width: 40px; /* Smaller button size */
+      height: 40px;
+  }
+  .downloadcv {
+      height: 2.5rem; /* Adjust download button size */
+      padding: 0 1.5rem;
+  }
+  .scroll-to-top a {
+      height: 35px;
+      width: 35px;
+      font-size: 20px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header-top img {
+      width: 100%; /* Full width for very small screens */
+  }
+  .bio-section {
+      margin-top: 2%; /* Reduce margin for smaller screens */
+  }
+  .icons {
+      flex-direction: column; /* Stack icons vertically */
+      gap: 10px; /* Reduce gap between icons */
+  }
+  .button {
+      width: 35px; /* Further reduce button size */
+      height: 35px;
+  }
+  .downloadcv {
+      height: 2rem; /* Further adjust download button size */
+      padding: 0 1rem;
+  }
+}
